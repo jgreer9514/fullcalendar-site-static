@@ -62,15 +62,15 @@ new Draggable(draggableEl, {
 You can also specify `eventData` as a function that returns an object. This function receives the element to be dragged.
 
 ```js
-new Draggable(containerEl, {
-  itemSelector: '.item-class',
-  eventData: function(eventEl) {
-    return {
-      title: eventEl.innerText,
-      duration: '02:00'
-    };
-  }
-});
+    new Draggable(containerEl, {
+        itemSelector: '.fc-event',
+        eventData: function(eventEl) {
+            return {
+                title: eventEl.innerText,
+                duration: JSON.parse(eventEl.dataset.event).duration
+            };
+        }
+    });
 ```
 
 
